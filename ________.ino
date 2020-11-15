@@ -23,7 +23,7 @@ if(irrecv.decode(&results)){  //적외선 리모컨의 신호를 받을 때
   switch(results.value){
     case 0xFFA857:  // +버튼을 눌렀을 때
     servo.attach(motor); // 모터 시작
-    angle+=60;      // 각도값 30 추가
+    angle+=60;      // 각도값 60 추가
     if(angle>180)   // 각도가 180이 넘어갈 때
     angle=180;      // 각도값 최대를 180으로
     servo.write(angle); // 서보모터 각도 이동
@@ -33,7 +33,7 @@ if(irrecv.decode(&results)){  //적외선 리모컨의 신호를 받을 때
     
     case 0xFFE01F:  // -버튼을 눌렀을 때
     servo.attach(motor); // 모터 시작
-    angle-=60;      // 30도 감소
+    angle-=60;      // 60도 감소
     if(angle<0)     // 각도값이 0보다 작을 때
     angle=0;        // 각도값 최소값을 0으로
     servo.write(angle); //서보모터 각도 이동
